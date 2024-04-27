@@ -7,7 +7,7 @@
 *.zip
 
 **/original/*
-!**/original/*
+!**/original/README.md
 
 session/*
 !session/README.md
