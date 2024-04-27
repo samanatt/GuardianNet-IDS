@@ -187,9 +187,9 @@ class BuildDataFrames:
         test_file_name = f'KDD_test_{self.classification_mode}.csv'
 
         if output_path is not None:
-            self.train.to_csv(os.path.join(output_path, 'guardian-net', 'dataset-processed', train_file_name),
+            self.train.to_csv(os.path.join(output_path, 'dataset-processed', train_file_name),
                               index=False)
-            self.test.to_csv(os.path.join(output_path, 'guardian-net', 'dataset-processed', train_file_name),
+            self.test.to_csv(os.path.join(output_path, 'dataset-processed', test_file_name),
                              index=False)
             print(f'Dataframes Saved in: {output_path}')
 
@@ -200,7 +200,7 @@ class BuildDataFrames:
 if __name__ == "__main__":
     set_seed(0)
     base_path = Path(__file__).resolve().parent
-    data_path = os.path.join('dataset-orginal', 'KDDCUP', 'original')
+    data_path = os.path.join('../dataset-orginal', 'KDDCUP', 'original')
     train_file_path = os.path.join(data_path, 'kddcup.data_10_percent_corrected')
     test_file_path = os.path.join(data_path, 'corrected.gz')
     classification_mode = 'binary'

@@ -35,7 +35,7 @@ class Preprocessor:
 
     def _read_data(self):
         base_path = Path(__file__).resolve().parent
-        dataset_path = os.path.join(base_path, 'dataset-orginal', 'UNSW', 'original')
+        dataset_path = os.path.join(base_path, '../dataset-orginal', 'UNSW', 'original')
 
         self.train_df = pd.read_csv(os.path.join(dataset_path, 'UNSW_NB15_training-set.csv'))
         print(len(self.train_df))
@@ -137,12 +137,12 @@ class Preprocessor:
 if __name__ == '__main__':
     set_seed(0)
     base_path = Path(__file__).resolve().parent
-    dataset_path = os.path.join(base_path, 'dataset-orginal', 'UNSW', 'original')
+    dataset_path = os.path.join(base_path, '../dataset-orginal', 'UNSW', 'original')
 
     train_path = os.path.join(dataset_path, 'UNSW_NB15_training-set.csv')
     test_path = os.path.join(dataset_path, 'UNSW_NB15_testing-set.csv')
 
-    save_path = os.path.join(base_path, 'guardian-net', 'dataset-processed')
+    save_path = os.path.join(base_path, 'dataset-processed')
     classification_m = 'binary'
 
     preprocessor = Preprocessor(train_path, test_path, save_path, classification_m, 'label', 'normalization')
