@@ -1,5 +1,9 @@
 .idea
 
+*.h5
+*.csv
+*.npy
+
 session/*
 !session/README.md
 
