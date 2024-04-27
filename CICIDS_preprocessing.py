@@ -142,8 +142,10 @@ class Preprocessor:
         self.train_df = self.train_df.sample(frac=1).reset_index(drop=True)
 
     def _save(self):
-        self.train_df.to_csv(os.path.join(self.save_path, 'dataset-processed', 'CICIDS_train_binary.csv'), index=False)
-        self.test_df.to_csv(os.path.join(self.save_path, 'dataset-processed', 'CICIDS_test_binary.csv'), index=False)
+        self.train_df.to_csv(
+            os.path.join(self.save_path, 'guardian-net', 'dataset-processed', 'CICIDS_train_binary.csv'), index=False)
+        self.test_df.to_csv(
+            os.path.join(self.save_path, 'guardian-net', 'dataset-processed', 'CICIDS_test_binary.csv'), index=False)
 
 
 if __name__ == '__main__':
