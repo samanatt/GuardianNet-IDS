@@ -5,7 +5,9 @@
 *.npy
 *.gz
 *.zip
-*/original/*
+
+**/original/*
+!**/original/*
 
 session/*
 !session/README.md
