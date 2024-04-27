@@ -1,0 +1,16 @@
+.idea
+
+session/*
+!session/README.md
+
+trained_ae*
+dataset-processed/*
+
+dataset/KDD_CUP99/*
+!dataset/KDD_CUP99/README.md
+
+dataset/UNSW_NB15/*
+!dataset/UNSW_NB15/README.md
+
+dataset/CICIDS/*
+!dataset/CICIDS/README.md
