@@ -8,7 +8,7 @@
   },
   "autoencoder": {
     "trainable": false,
-    "method": "standard",
+    "method": "layer-wise",
     "n_hidden_layer": 3,
     "unit": 128,
     "epoch": 150,
