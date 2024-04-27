@@ -1,0 +1,45 @@
+{
+  "seed": 0,
+  "dataset": {
+    "name": "CICIDS",
+    "classification_mode": "binary",
+    "val_size": 0.05,
+    "n_worker": 4
+  },
+  "autoencoder": {
+    "trainable": false,
+    "method": "layer-wise",
+    "n_hidden_layer": 3,
+    "unit": 128,
+    "epoch": 150,
+    "batch": 32,
+    "loss": ["mse"],
+    "hidden_activation": ["tanh", "relu"],
+    "out_activation": ["relu"],
+    "optimizer": ["sgd"],
+    "lr_schedule": true,
+    "initial_lr": 0.1,
+    "finial_lr": 0.0001,
+    "decay": 0.5
+  },
+  "classifier": {
+    "name": "BILSTM",
+    "n_layer": 2,
+    "unit": [16, 32, 64, 128],
+    "merge_mode": ["concat"],
+    "min_dropout": 0,
+    "max_dropout": 0.8,
+    "batch": [32, 64, 128],
+    "min_lr": 0.00001,
+    "max_lr": 0.01,
+    "epoch": 150,
+    "max_evals": 30,
+    "loss_fn": "cce",
+    "monitor": "val_loss",
+    "early_stop_use": true,
+    "early_stop_min_delta": 0.0001,
+    "early_stop_patience": 10
+
+
+  }
+}
