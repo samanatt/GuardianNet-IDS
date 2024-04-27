@@ -142,14 +142,14 @@ class Preprocessor:
         self.train_df = self.train_df.sample(frac=1).reset_index(drop=True)
 
     def _save(self):
-        self.train_df.to_csv(os.path.join(self.save_path, 'train_binary.csv'), index=False)
-        self.test_df.to_csv(os.path.join(self.save_path, 'test_binary.csv'), index=False)
+        self.train_df.to_csv(os.path.join(self.save_path, 'dataset-processed', 'CICIDS_train_binary.csv'), index=False)
+        self.test_df.to_csv(os.path.join(self.save_path, 'dataset-processed', 'CICIDS_test_binary.csv'), index=False)
 
 
 if __name__ == '__main__':
     set_seed(0)
-    base_path = Path(__file__).resolve().parent.joinpath('CICIDS')
-    data_path = base_path.joinpath('original')
+    base_path = Path(__file__).resolve().parent
+    data_path = os.path.join('dataset-orginal', 'CICIDS', 'original')
 
     preprocessor = Preprocessor(dataset_path=data_path,
                                 save_path=base_path,

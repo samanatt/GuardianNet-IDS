@@ -183,12 +183,14 @@ class BuildDataFrames:
         self.train = self.train.sample(frac=1).reset_index(drop=True)
 
     def save_data_frames(self, output_path):
-        train_file_name = f'train_{self.classification_mode}.csv'
-        test_file_name = f'test_{self.classification_mode}.csv'
+        train_file_name = f'KDD_train_{self.classification_mode}.csv'
+        test_file_name = f'KDD_test_{self.classification_mode}.csv'
 
         if output_path is not None:
-            self.train.to_csv(os.path.join(output_path, train_file_name), index=False)
-            self.test.to_csv(os.path.join(output_path, test_file_name), index=False)
+            self.train.to_csv(os.path.join(output_path, 'guardian-net', 'dataset-processed', train_file_name),
+                              index=False)
+            self.test.to_csv(os.path.join(output_path, 'guardian-net', 'dataset-processed', train_file_name),
+                             index=False)
             print(f'Dataframes Saved in: {output_path}')
 
     def get_data_frames(self):
@@ -197,9 +199,10 @@ class BuildDataFrames:
 
 if __name__ == "__main__":
     set_seed(0)
-    base_path = Path(__file__).resolve().parent.joinpath('KDDCUP')
-    train_file_path = base_path.joinpath('original', 'kddcup.data_10_percent_corrected')
-    test_file_path = base_path.joinpath('original', 'corrected.gz')
+    base_path = Path(__file__).resolve().parent
+    data_path = os.path.join('dataset-orginal', 'KDDCUP', 'original')
+    train_file_path = os.path.join(data_path, 'kddcup.data_10_percent_corrected')
+    test_file_path = os.path.join(data_path, 'corrected.gz')
     classification_mode = 'binary'
     # classification_mode = 'multi'
 
