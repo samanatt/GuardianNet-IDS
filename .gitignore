@@ -3,6 +3,9 @@
 *.h5
 *.csv
 *.npy
+*.gz
+*.zip
+*/original/*
 
 session/*
 !session/README.md
